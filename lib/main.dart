@@ -1,3 +1,8 @@
+import 'package:fem2_app/features/auth/screens/registration_screen.dart';
+import 'package:fem2_app/features/events/screens/events_catalog_screen.dart';
+import 'package:fem2_app/features/grants/screens/grants_catalog_screen.dart';
+import 'package:fem2_app/features/ngo/screens/ngo_dashboard_screen.dart';
+import 'package:fem2_app/features/ngo/screens/ngo_main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fem2_app/config/theme.dart';
 import 'package:fem2_app/features/auth/screens/login_screen.dart';
@@ -14,7 +19,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'FEM App',
       theme: AppTheme.light,
-      home: const LoginScreen(),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => const LoginScreen(),
+        '/register': (context) => const RegistrationScreen(),
+        '/home': (context) => const MainScreen(),
+        '/events': (context) => const EventsCatalogScreen(),
+        '/grants': (context) => const GrantsCatalogScreen(),
+        '/ngo-dashboard': (context) => const NGOMainScreen(),
+      },
       debugShowCheckedModeBanner: false,
     );
   }

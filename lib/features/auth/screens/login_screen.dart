@@ -1,3 +1,4 @@
+import 'package:fem2_app/features/auth/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fem2_app/features/main/screens/main_screen.dart';
 
@@ -96,7 +97,11 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (_) => const RegistrationScreen()),
+                  );
+                },
                 child: const Text('Зареєструватися'),
               ),
               const SizedBox(height: 24),

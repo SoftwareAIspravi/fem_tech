@@ -22,7 +22,29 @@ class ForumScreen extends StatelessWidget {
         'color': Colors.purple,
         'groups': ['Особистий розвиток', 'Відносини', 'Материнство']
       },
-      // Add more categories...
+      {
+        'title': 'Громадські організації',
+        'icon': Icons.groups,
+        'color': Colors.blue,
+        'groups': [
+          'ГО "Жіночий консорціум"',
+          'ГО "Жіноча сила"',
+          'Фонд "Розвиток майбутнього"',
+          'ГО "Підтримка"',
+          'Благодійний фонд "Надія"'
+        ]
+      },
+      {
+        'title': 'Благодійні фонди',
+        'icon': Icons.volunteer_activism,
+        'color': Colors.green,
+        'groups': [
+          'Фонд допомоги жінкам',
+          'Центр підтримки сім\'ї',
+          'Фонд захисту прав',
+          'Благодійний фонд "Турбота"'
+        ]
+      },
     ];
 
     return Scaffold(
@@ -44,12 +66,12 @@ class ForumScreen extends StatelessWidget {
               leading: Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+                  color: (category['color'] as Color).withOpacity(0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(
                   category['icon'] as IconData,
-                  color: Theme.of(context).colorScheme.primary,
+                  color: category['color'] as Color,
                 ),
               ),
               title: Text(
